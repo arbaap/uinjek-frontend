@@ -77,7 +77,6 @@ export function ManageDrivers() {
                     <td>{driver.email}</td>
                     <td>{driver.alamat}</td>
                     <td className={statusClass}>{driver.status}</td>
-                    
                   </tr>
                 );
               })
