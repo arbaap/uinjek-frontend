@@ -60,7 +60,9 @@ function ListDriver() {
 
   const fetchDrivers = async () => {
     try {
-      const response = await axios.get("/api/drivers/getalldrivers");
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_API}/api/drivers/getalldrivers`
+      );
       const driversWithMotorcycles = response.data.map((driver) => {
         const motorcycle =
           driver.motorcycles && driver.motorcycles.length > 0

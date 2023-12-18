@@ -51,7 +51,10 @@ function PelangganLogin() {
     console.log(pelanggas);
     try {
       const result = (
-        await axios.post("/api/pelanggans/loginpelanggan", pelanggas)
+        await axios.post(
+          `${process.env.REACT_APP_BACKEND_API}/api/pelanggans/loginpelanggan`,
+          pelanggas
+        )
       ).data;
       Swal.fire("Okay", "Login Berhasil", "success").then((result) => {
         window.location.href = "/home";

@@ -20,16 +20,19 @@ const OrderForm = ({
   const handleOrderSubmit = async () => {
     try {
       setLoading(true);
-      const response = await axios.post("api/orders/submitorder", {
-        driverId: selectedDriver._id,
-        pelangganName,
-        pelangganId,
-        additionalInfo,
-        titikPenjemputan,
-        titikTujuan,
-        pembayaran: `${pembayaran} - ${spesifikPembayaran}`,
-        harga,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_API}/api/orders/submitorder`,
+        {
+          driverId: selectedDriver._id,
+          pelangganName,
+          pelangganId,
+          additionalInfo,
+          titikPenjemputan,
+          titikTujuan,
+          pembayaran: `${pembayaran} - ${spesifikPembayaran}`,
+          harga,
+        }
+      );
 
       onOrderSubmit(response.data);
 

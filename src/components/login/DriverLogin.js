@@ -52,7 +52,12 @@ function DriverLogin() {
     };
     console.log(driver);
     try {
-      const result = (await axios.post("/api/drivers/logindriv", driver)).data;
+      const result = (
+        await axios.post(
+          `${process.env.REACT_APP_BACKEND_API}/api/drivers/logindriv`,
+          driver
+        )
+      ).data;
       Swal.fire("Okay", "Login Berhasil", "success").then((result) => {
         window.location.href = "/admindriver";
       });

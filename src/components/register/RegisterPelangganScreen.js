@@ -109,7 +109,7 @@ function RegisterPelanggan() {
 
     try {
       const result = await axios.post(
-        "/api/pelanggans/registerpelanggan",
+        `${process.env.REACT_APP_BACKEND_API}/api/pelanggans/registerpelanggan`,
         driver
       );
       console.log(result);

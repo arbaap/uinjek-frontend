@@ -25,7 +25,7 @@ function OrdersHistory() {
   const fetchOrders = async () => {
     try {
       const response = await axios.get(
-        `/api/orders/ordersfordriver/${driverId}`
+        `${process.env.REACT_APP_BACKEND_API}/api/orders/ordersfordriver/${driverId}`
       );
       setOrders(response.data);
       setLoading(false);
@@ -88,9 +88,12 @@ function OrdersHistory() {
 
     if (confirmResult.isConfirmed) {
       try {
-        const response = await axios.post("/api/orders/completeOrder", {
-          orderId,
-        });
+        const response = await axios.post(
+          `${process.env.REACT_APP_BACKEND_API}/api/orders/completeOrder`,
+          {
+            orderId,
+          }
+        );
 
         fetchOrders();
 

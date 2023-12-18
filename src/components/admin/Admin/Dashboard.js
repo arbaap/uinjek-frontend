@@ -22,7 +22,7 @@ function Dashboard() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://uinjek-backend.vercel.app/api/orders/getallorders"
+        `${process.env.REACT_APP_BACKEND_API}/api/orders/getallorders`
       );
       const data = response.data;
 

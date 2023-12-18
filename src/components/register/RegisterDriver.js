@@ -112,7 +112,10 @@ function RegisterDriver() {
     formData.append("imageProfile", imageProfile);
 
     try {
-      const result = await axios.post("/api/drivers/registerdriver", formData);
+      const result = await axios.post(
+        `${process.env.REACT_APP_BACKEND_API}/api/drivers/registerdriver`,
+        formData
+      );
       console.log(result);
       Swal.fire("Selamat", "Registrasi Berhasil", "success").then((result) => {
         window.location.href = "/logindriver";

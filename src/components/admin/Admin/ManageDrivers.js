@@ -18,7 +18,9 @@ export function ManageDrivers() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("/api/drivers/getalldrivers");
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_API}/api/drivers/getalldrivers`
+      );
       setdrivers(response.data);
     } catch (error) {
       console.log(error);
