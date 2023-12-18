@@ -51,10 +51,7 @@ function PelangganLogin() {
     console.log(pelanggas);
     try {
       const result = (
-        await axios.post(
-          "https://uinjek-backend.vercel.app/api/pelanggans/loginpelanggan",
-          pelanggas
-        )
+        await axios.post("/api/pelanggans/loginpelanggan", pelanggas)
       ).data;
       Swal.fire("Okay", "Login Berhasil", "success").then((result) => {
         window.location.href = "/home";

@@ -20,9 +20,7 @@ function ManagePelanggans() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        "https://uinjek-backend.vercel.app/api/pelanggans/getallpelanggans"
-      );
+      const response = await axios.get("/api/pelanggans/getallpelanggans");
       setpelanggans(response.data);
     } catch (error) {
       console.log(error);
@@ -180,3 +178,4 @@ function ManagePelanggans() {
   );
 }
 export default ManagePelanggans;
+

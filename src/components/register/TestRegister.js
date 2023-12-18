@@ -24,10 +24,7 @@ function TestRegister() {
     formData.append("image", image);
 
     try {
-      const result = await axios.post(
-        "https://uinjek-backend.vercel.app/api/test/testregister",
-        formData
-      );
+      const result = await axios.post("/api/test/testregister", formData);
       console.log(result);
       Swal.fire("Selamat", "Registrasi Berhasil", "success").then((result) => {
         window.location.reload();
@@ -121,9 +118,7 @@ export function TestList() {
     // Mengambil data uji saat komponen dimuat
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://uinjek-backend.vercel.app/api/test/gettests"
-        );
+        const response = await axios.get("/api/test/gettests");
         setTests(response.data);
       } catch (error) {
         console.error("Error fetching test data:", error);

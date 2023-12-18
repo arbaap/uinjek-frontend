@@ -21,9 +21,7 @@ function ManageOrders() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(
-        "https://uinjek-backend.vercel.app/api/orders/getallorders"
-      );
+      const response = await axios.get("/api/orders/getallorders");
       setOrders(response.data);
     } catch (error) {
       console.log(error);

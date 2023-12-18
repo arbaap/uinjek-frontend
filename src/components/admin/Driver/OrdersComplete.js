@@ -24,7 +24,7 @@ function OrdersComplete() {
   const fetchOrders = async () => {
     try {
       const response = await axios.get(
-        `https://uinjek-backend.vercel.app/api/orders/ordersfordriver/${driverId}`
+        `/api/orders/ordersfordriver/${driverId}`
       );
       setOrders(response.data);
       setLoading(false);

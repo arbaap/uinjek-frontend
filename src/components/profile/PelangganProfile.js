@@ -90,7 +90,7 @@ export function History() {
   const fetchOrders = async () => {
     try {
       const response = await axios.get(
-        `https://uinjek-backend.vercel.app/api/orders/historyorder/${pelangganId}`
+        `/api/orders/historyorder/${pelangganId}`
       );
       setOrders(response.data);
     } catch (error) {
