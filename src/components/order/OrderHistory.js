@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // In your React component (ProfilePelanggan.js or similar)
 
 import React, { useEffect, useState } from "react";

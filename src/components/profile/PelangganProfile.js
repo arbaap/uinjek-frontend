@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Container } from "react-bootstrap";
 import { Tab, Col, Nav, Row, Table } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
